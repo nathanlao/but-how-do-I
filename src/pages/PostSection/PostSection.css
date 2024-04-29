@@ -1,0 +1,24 @@
+.post-section-board {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.post-section-text-title {
+  color: #fff7ed;
+}
+
+.hover-bg:hover {
+  background-color: #fff7ed;
+}
+
+.hover-text:hover {
+  color: #030712;
+}
+
+.border-selected {
+  border-color: #fff7ed;
+}
+
+.text-selected {
+  color: #fff7ed;
+}

@@ -1,0 +1,200 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(10, 12, 18);
+}
+
+.title-text {
+  color: #cf8944;
+}
+
+.disable-select {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.disable-display {
+  display: none;
+}
+
+.hljs-selector-id {
+  color: #d54e53;
+}
+
+.hljs-symbol {
+  color: #b9ca4a;
+}
+
+.hljs-addition {
+  color: #b9ca4a;
+}
+
+.hljs-type {
+  color: #e78c45;
+}
+
+.hljs-built_in {
+  color: #e78c45;
+}
+
+.hljs-number {
+  color: #e78c45;
+}
+
+.hljs-string {
+  color: #b9ca4a;
+}
+
+.hljs-template-variable {
+  color: #d54e53;
+}
+
+.hljs-quote {
+  color: #969896;
+}
+
+.hljs-literal {
+  color: #e78c45;
+}
+
+.hljs-deletion {
+  color: #d54e53;
+}
+
+.hljs-selector-class {
+  color: #d54e53;
+}
+
+.hljs-title {
+  color: #7aa6da;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-keyword {
+  color: #c397d8;
+}
+
+.hljs-link {
+  color: #e78c45;
+}
+
+.hljs-section {
+  color: #7aa6da;
+}
+
+.hljs-tag {
+  color: #d54e53;
+}
+
+.hljs-meta {
+  color: #e78c45;
+}
+
+.hljs-bullet {
+  color: #b9ca4a;
+}
+
+.hljs-attribute {
+  color: #e7c547;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-variable {
+  color: #d54e53;
+}
+
+.hljs-builtin-name {
+  color: #e78c45;
+}
+
+.hljs-selector-tag {
+  color: #c397d8;
+}
+
+.hljs-regexp {
+  color: #d54e53;
+}
+
+.hljs-params {
+  color: #e78c45;
+}
+
+.hljs {
+  display: block;
+  padding: 0.5em;
+  overflow-x: auto;
+  color: #eaeaea;
+}
+
+.hljs-comment {
+  color: #969896;
+}
+
+.hljs-name {
+  color: #d54e53;
+}
+
+.hljs {
+  overflow-x: scroll;
+}
+
+pre code {
+  background-color: #11131f;
+}
+
+post p {
+  color: rgb(255 255 255);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    'Liberation Mono', 'Courier New', monospace;
+  font-size: 1.25rem;
+  line-height: 1.8rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+post li {
+  color: rgb(255 255 255);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    'Liberation Mono', 'Courier New', monospace;
+  font-size: 1.25rem;
+  line-height: 1.2rem;
+  margin-bottom: 0.4rem;
+}
+
+post li::before {
+  padding-left: 15px;
+  content: ' - ';
+}
+
+post ul {
+  line-height: 1.2rem;
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+post p a {
+  text-decoration-line: underline;
+  font-style: italic;
+}
+
+.debug {
+  border: 3px solid red;
+}

@@ -1,0 +1,8 @@
+.text-post,
+.text-home {
+  color: #fff7ed;
+}
+
+.hover-border-home:hover {
+  border-color: #fff7ed;
+}

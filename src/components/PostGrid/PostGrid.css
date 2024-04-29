@@ -1,0 +1,28 @@
+.post-grid {
+  background-color: #1a273330;
+}
+
+.post-grid:hover {
+  background-color: #3e465e40;
+}
+
+.post-grid-text {
+  color: #fff7ed;
+}
+
+.post-grid-border:hover {
+  border-color: #fff7ed;
+}
+
+.fade-in {
+  animation: fadeInAnimation 0.5s ease forwards;
+}
+
+@keyframes fadeInAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
