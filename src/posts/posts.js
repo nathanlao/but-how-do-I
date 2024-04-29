@@ -13,6 +13,11 @@ export const postData = [
     title: 'How Do I Use setInterval() For Repeating A Content',
     tags: ['javascript', 'react'],
     id: 2
+  },
+  {
+    title: 'How Do I Fetch Raw HTML Content From GitHub',
+    tags: ['html'],
+    id: 3
   }
 ];
 
