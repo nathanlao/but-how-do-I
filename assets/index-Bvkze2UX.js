@@ -74,7 +74,7 @@ Error generating stack: `+i.message+`
           mb-5 
           transition 
           duration-300 
-          hover:scale-105
+          hover:scale-102
           post-grid
           post-grid-border
         border-zinc-500
