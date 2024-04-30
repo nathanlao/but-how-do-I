@@ -13,10 +13,10 @@
   <p>
     Well, files hosted on GitHub can be accessed through their raw version using
     a direct URL.
+    <a href="#" style="color: #fff7ed; cursor: none"
+      >https://raw.githubusercontent.com/&lbrace;username&rbrace;/&lbrace;repository&rbrace;/&lbrace;branch&rbrace;/&lbrace;path_to_file&rbrace;.&lbrace;file_extension&rbrace;</a
+    >
   </p>
-  <a href="#"
-    >https://raw.githubusercontent.com/&lbrace;username&rbrace;/&lbrace;repository&rbrace;/&lbrace;branch&rbrace;/&lbrace;path_to_file&rbrace;.&lbrace;file_extension&rbrace;</a
-  >
   <p>
     Declare a state for holding your response, the response type is a text in
     string
@@ -36,7 +36,7 @@
   <pre>
     <code class="hljs">
         <span class="hljs-keyword">const</span> <span class="hljs-variable">fetchHTMLContent</span> = <span class="hljs-keyword">async</span> title =&gt; &lbrace;
-            <span class="hljs-keyword">const</span> encodedTitle = encodeURIComponent(title);
+            <span class="hljs-keyword">const</span> encodedTitle = <span class="hljs-meta">encodeURIComponent</span>(title);
             <span class="hljs-keyword">const</span> url = <span class="hljs-string">`https://raw.githubusercontent.com/nathanlao/but-how-do-I/master/src/posts/<span class=".hljs-tag">$&lbrace;encodedTitle&rbrace;.html</span>`</span>;
         
             <span class="hljs-keyword">try</span> &lbrace;
@@ -70,10 +70,10 @@
         &rbrace;, [title]);
     </code>
   </pre>
-  <p>You made it! Return JSX elements</p>
+  <p>You made it! You have the HTML text content returned back now, go ahead and render JSX elements</p>
   <pre>
     <code class="hljs">
-        return &lt;div dangerouslySetInnerHTML={{ __html: rawHTMLContent }} /&gt;
+        <span class="hljs-keyword">return</span> <span class="hljs-tag">&lt;div</span> <span class="hljs-attribute">dangerouslySetInnerHTML</span>={{ __html: rawHTMLContent }} <span class="hljs-tag">/&gt</span>;
     </code>
   </pre>
   <p>
