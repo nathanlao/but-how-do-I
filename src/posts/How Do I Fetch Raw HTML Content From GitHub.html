@@ -13,10 +13,12 @@
   <p>
     Well, files hosted on GitHub can be accessed through their raw version using
     a direct URL.
-    <a href="#" style="color: #fff7ed; cursor: none"
-      >https://raw.githubusercontent.com/&lbrace;username&rbrace;/&lbrace;repository&rbrace;/&lbrace;branch&rbrace;/&lbrace;path_to_file&rbrace;.&lbrace;file_extension&rbrace;</a
-    >
   </p>
+  <pre>
+    <code class="hljs">
+      <span>https://raw.githubusercontent.com/&lbrace;username&rbrace;/&lbrace;repository&rbrace;/&lbrace;branch&rbrace;/&lbrace;path_to_file&rbrace;.&lbrace;file_extension&rbrace;</span>
+    </code>
+  </pre>
   <p>
     Declare a state for holding your response, the response type is a text in
     string
@@ -70,7 +72,10 @@
         &rbrace;, [title]);
     </code>
   </pre>
-  <p>You made it! You have the HTML text content returned back now, go ahead and render JSX elements</p>
+  <p>
+    You made it! You have the HTML text content returned back now, go ahead and
+    render JSX elements
+  </p>
   <pre>
     <code class="hljs">
         <span class="hljs-keyword">return</span> <span class="hljs-tag">&lt;div</span> <span class="hljs-attribute">dangerouslySetInnerHTML</span>={{ __html: rawHTMLContent }} <span class="hljs-tag">/&gt</span>;
