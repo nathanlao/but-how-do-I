@@ -1,7 +1,7 @@
 export const postData = [
   {
     title: 'How Do I Implement Pagination in React',
-    tags: ['react'],
+    tags: ['react', 'javascript'],
     id: 0
   },
   {
@@ -16,7 +16,7 @@ export const postData = [
   },
   {
     title: 'How Do I Fetch Raw HTML Content From GitHub',
-    tags: ['html'],
+    tags: ['react'],
     id: 3
   }
 ];
