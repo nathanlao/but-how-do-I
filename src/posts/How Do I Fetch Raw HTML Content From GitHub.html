@@ -34,7 +34,7 @@
     here:
   </p>
   <pre>
-    <code>
+    <code class="hljs">
         <span class="hljs-keyword">const</span> <span class="hljs-variable">fetchHTMLContent</span> = <span class="hljs-keyword">async</span> title =&gt; &lbrace;
             <span class="hljs-keyword">const</span> encodedTitle = encodeURIComponent(title);
             <span class="hljs-keyword">const</span> url = <span class="hljs-string">`https://raw.githubusercontent.com/nathanlao/but-how-do-I/master/src/posts/<span class=".hljs-tag">$&lbrace;encodedTitle&rbrace;.html</span>`</span>;
@@ -60,7 +60,7 @@
     useEffect()
   </p>
   <pre>
-    <code>
+    <code class="hljs">
         <span class="hljs-variable">useEffect</span>(() =&gt; &lbrace;
             <span class="hljs-keyword">const</span> <span class="hljs-variable">fetchContent</span> = <span class="hljs-keyword">async</span> () =&gt; &lbrace;
               <span class="hljs-keyword">const</span> HTMLContent = <span class="hljs-keyword">await</span> <span class="hljs-variable">fetchHTMLContent</span>(title);
@@ -72,7 +72,7 @@
   </pre>
   <p>You made it! Return JSX elements</p>
   <pre>
-    <code>
+    <code class="hljs">
         return &lt;div dangerouslySetInnerHTML={{ __html: rawHTMLContent }} /&gt;
     </code>
   </pre>
