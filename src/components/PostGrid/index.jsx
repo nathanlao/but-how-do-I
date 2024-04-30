@@ -8,7 +8,7 @@ const PostGrid = ({ title, tags }) => {
   }, [tags]);
 
   return (
-    <Link to={`/post/${title}`}>
+    <Link to={`/but-how-do-I/post/${title}`}>
       <div
         className="
           w-4/5 

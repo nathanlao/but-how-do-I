@@ -11,11 +11,11 @@ import './App.css';
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: '/but-how-do-I/',
     element: <Home />
   },
   {
-    path: '/post/:title',
+    path: '/but-how-do-I/post/:title',
     element: (
       <FadeInWrapper>
         <Post />

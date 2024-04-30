@@ -42,7 +42,7 @@ const Post = () => {
           dangerouslySetInnerHTML={{ __html: rawHTMLContent }}
         />
       </div>
-      <Link to="/">
+      <Link to="/but-how-do-I/">
         <div
           className="
             fixed
