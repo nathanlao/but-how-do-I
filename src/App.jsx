@@ -2,6 +2,7 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Home from './pages/Home';
 import Post from './pages/Post';
+import FadeInWrapper from './components/FadeInWrapper';
 
 import './App.css';
 
@@ -15,7 +16,11 @@ const router = createBrowserRouter([
   },
   {
     path: '/post/:title',
-    element: <Post />
+    element: (
+      <FadeInWrapper>
+        <Post />
+      </FadeInWrapper>
+    )
   }
 ]);
 

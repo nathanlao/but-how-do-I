@@ -161,7 +161,7 @@ pre code {
 }
 
 post p {
-  color: rgb(255 255 255);
+  color: #fff7ed;
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
     'Liberation Mono', 'Courier New', monospace;
   font-size: 1.25rem;
@@ -171,7 +171,7 @@ post p {
 }
 
 post li {
-  color: rgb(255 255 255);
+  color: #fff7ed;
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
     'Liberation Mono', 'Courier New', monospace;
   font-size: 1.25rem;
@@ -193,6 +193,7 @@ post ul {
 post p a {
   text-decoration-line: underline;
   font-style: italic;
+  color: #60a5fa;
 }
 
 .debug {

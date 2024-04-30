@@ -47,7 +47,7 @@ const Home = () => {
   }
 
   return (
-    <div className={`${isComponentVisible ? 'fade-in' : ''}`}>
+    <div className={`fade-in ${isComponentVisible ? 'visible' : ''}`}>
       <div className="h-screen w-screen -z-10"></div>
       <div
         className="fixed top-0 h-screen w-screen -z-10"

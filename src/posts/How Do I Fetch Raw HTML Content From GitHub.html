@@ -1,3 +1,91 @@
 <post>
-    <p>This is a testing post.</p>
+  <p>
+    So recently I have been exploring how to separate the static content
+    management from my React application. Although
+    <a
+      target="_blank"
+      href="https://www.cloudflare.com/en-ca/learning/performance/static-site-generator/"
+      >SSG (Satic Site Generator)</a
+    >
+    would be a better choice, if you want to manage content independently of the
+    dynamic application, try the following:
+  </p>
+  <p>
+    Well, files hosted on GitHub can be accessed through their raw version using
+    a direct URL.
+  </p>
+  <a href="#"
+    >https://raw.githubusercontent.com/&lbrace;username&rbrace;/&lbrace;repository&rbrace;/&lbrace;branch&rbrace;/&lbrace;path_to_file&rbrace;.&lbrace;file_extension&rbrace;</a
+  >
+  <p>
+    Declare a state for holding your response, the response type is a text in
+    string
+  </p>
+  <pre>
+    <code class="hljs">
+        <span class="hljs-keyword">const</span> [rawHTMLContent, setRawHTMLContent] = <span class="hljs-variable">useState(<span class="hljs-string">&#39;&#39;</span>)</span>;
+    </code>
+  </pre>
+  <p>
+    <a target="_blank" href="https://github.com/umijs/umi-request"
+      >umi-request</a
+    >
+    is a library combines features of Fetch and axios, I am using umi-request
+    here:
+  </p>
+  <pre>
+    <code>
+        <span class="hljs-keyword">const</span> <span class="hljs-variable">fetchHTMLContent</span> = <span class="hljs-keyword">async</span> title =&gt; &lbrace;
+            <span class="hljs-keyword">const</span> encodedTitle = encodeURIComponent(title);
+            <span class="hljs-keyword">const</span> url = <span class="hljs-string">`https://raw.githubusercontent.com/nathanlao/but-how-do-I/master/src/posts/<span class=".hljs-tag">$&lbrace;encodedTitle&rbrace;.html</span>`</span>;
+        
+            <span class="hljs-keyword">try</span> &lbrace;
+                <span class="hljs-keyword">const</span> response = <span class="hljs-keyword">await</span> <span class="hljs-variable">request</span>(url, &lbrace;
+                  <span class="hljs-attribute">method</span>: <span class="hljs-string">'get'</span>,
+                  <span class="hljs-attribute">responseType</span>: <span class="hljs-string">'text'</span>
+                &rbrace;);
+              <span class="hljs-keyword">return</span> response;
+            &rbrace; <span class="hljs-keyword">catch</span> (error) &lbrace;
+              <span class="hljs-attribute">console</span>.error('Error fetching the HTML content:', error);
+              &rbrace;
+        &rbrace;;
+    </code>
+  </pre>
+  <p>
+    Note: encodeURIComponent() must be used here to ensure that special
+    characters are safely encoded for use within a URL
+  </p>
+  <p>
+    Of course! Data fetching is a side effect, so wrap the function call in
+    useEffect()
+  </p>
+  <pre>
+    <code>
+        <span class="hljs-variable">useEffect</span>(() =&gt; &lbrace;
+            <span class="hljs-keyword">const</span> <span class="hljs-variable">fetchContent</span> = <span class="hljs-keyword">async</span> () =&gt; &lbrace;
+              <span class="hljs-keyword">const</span> HTMLContent = <span class="hljs-keyword">await</span> <span class="hljs-variable">fetchHTMLContent</span>(title);
+              <span class="hljs-variable">setRawHTMLContent</span>(HTMLContent); <span class="hljs-comment">// remember to update the state for raw text content</span>
+              &rbrace;;
+            <span class="hljs-variable">fetchContent</span>();
+        &rbrace;, [title]);
+    </code>
+  </pre>
+  <p>You made it! Return JSX elements</p>
+  <pre>
+    <code>
+        return &lt;div dangerouslySetInnerHTML={{ __html: rawHTMLContent }} /&gt;
+    </code>
+  </pre>
+  <p>
+    But what is
+    <a
+      target="_blank"
+      href="https://blog.logrocket.com/using-dangerouslysetinnerhtml-react-application/"
+      >dangerouslySetInnerHTML</a
+    >?
+  </p>
+  <p>
+    It is when you want to programmatically set the content on a HTML element in
+    React. View more about its Security risks.
+  </p>
 </post>
