@@ -1,0 +1,47 @@
+<post>
+<p>Timing events can be useful when you want to execute the code at specified time intervals.</p>
+<p><a target="_blank" href="https://javascript.info/settimeout-setinterval">setInterval()</a> is one of them that allows us to repeatly run a function.</p>
+<p>I want to use setInterval() to repeatly render a string content in React:</p>
+<pre>
+<code class="hljs"><span class="hljs-keyword">const</span> [dots, setDots] = <span class="hljs-variable">useState</span>(<span class="hljs-string">&#39;&#39;</span>);
+
+<span class="hljs-variable">useEffect</span>(() => &lbrace;
+  <span class="hljs-keyword">let</span> dotCount = 0;
+  <span class="hljs-keyword">const</span> interval = <span class="hljs-meta">setInterval</span>(() => &lbrace;
+  dotCount = (dotCount + 1) % 4; <span class="hljs-comment">// Reset the count in every 3 strings</span>
+  <span class="hljs-keyword">let</span> dots = <span class="hljs-string">&#39;&#39;</span>;
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = 0; i &lt; dotCount; i++) &lbrace;
+      dots += <span class="hljs-string">&#39;.&#39;</span>;
+  &rbrace;
+  <span class="hljs-variable">setDots</span>(dots);
+  &rbrace;, 600);
+  <span class="hljs-keyword">return</span> () => <span class="hljs-meta">clearInterval</span>(interval);
+&rbrace;, []);
+</code>
+</pre>
+<p>You may wanna create a <a target="_blank" href="https://medium.com/@hamzamakh/typewriter-effect-in-react-a103a4f385c9">Typewriter</a> effect by modifying the logic a bit, but it could be tricky here with the React state updates here, the second character is skipped because index is incremented twice before the set state inner function has run once. Consider using a ref to store your string value (updating a reference will not trigger a component re-rendering):</p>
+<pre>
+<code class="hljs"><span class="hljs-keyword">const</span> [text, setText] = <span class="hljs-variable">useState</span>(<span class="hljs-string">&#39;&#39;</span>);
+<span class="hljs-keyword">const</span> fullText = <span class="hljs-string">Hello world!</span>;
+<span class="hljs-keyword">const</span> index = <span class="hljs-variable">useRef</span>(0);
+<span class="hljs-keyword">const</span> displayTextRef = <span class="hljs-variable">useRef</span>(<span class="hljs-string">&#39;&#39;</span>);
+
+<span class="hljs-variable">useEffect</span>(() => &lbrace;
+  <span class="hljs-keyword">const</span> interval = <span class="hljs-meta">setInterval</span>(() => &lbrace;
+    <span class="hljs-keyword">if</span> (index.current &lt; fullText.length) &lbrace;
+      displayTextRef.current += fullText.<span class="hljs-meta">charAt</span>(index.current);
+      <span class="hljs-variable">setText</span>(() => displayTextRef.current);
+      index.current += 1;
+    &rbrace; <span class="hljs-keyword">else</span> &lbrace;
+      <span class="hljs-meta">clearInterval</span>(interval);
+    &rbrace;
+  &rbrace;, 500);
+  <span class="hljs-keyword">return</span> () => &lbrace;
+    <span class="hljs-variable">setText</span>(<span class="hljs-string">&#39;&#39;</span>);
+    <span class="hljs-meta">clearInterval</span>(interval);
+  &rbrace;;
+&rbrace;, []);
+</code>
+</pre>
+<p>This is it!</p>
+</post>

@@ -10,7 +10,7 @@ const Post = () => {
 
   const fetchHTMLContent = async title => {
     const encodedTitle = encodeURIComponent(title);
-    const url = `https://raw.githubusercontent.com/nathanlao/but-how-do-I/master/src/posts/${encodedTitle}.html`;
+    const url = `https://raw.githubusercontent.com/nathanlao/but-how-do-I/main/src/posts/${encodedTitle}.html`;
 
     try {
       const response = await request(url, {

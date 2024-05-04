@@ -10,7 +10,7 @@ export const postData = [
     id: 1
   },
   {
-    title: 'How Do I Use setInterval() For Repeating A Content',
+    title: 'How Do I Use setInterval() For Repeating A String Literal',
     tags: ['javascript', 'react'],
     id: 2
   },

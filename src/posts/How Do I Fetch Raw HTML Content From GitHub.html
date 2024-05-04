@@ -23,7 +23,7 @@ Declare a state for holding your response, the response type is a text in
 string
 </p>
 <pre>
-<code class="hljs"><span class="hljs-keyword">const</span> [rawHTMLContent, setRawHTMLContent] = <span class="hljs-variable">useState(<span class="hljs-string">&#39;&#39;</span>)</span>;
+<code class="hljs"><span class="hljs-keyword">const</span> [rawHTMLContent, setRawHTMLContent] = <span class="hljs-variable">useState</span>(<span class="hljs-string">&#39;&#39;</span>);
 </code>
 </pre>
 <p>
@@ -42,7 +42,7 @@ here:
         <span class="hljs-attribute">method</span>: <span class="hljs-string">'get'</span>,
         <span class="hljs-attribute">responseType</span>: <span class="hljs-string">'text'</span>
       &rbrace;);
-        <span class="hljs-keyword">return</span> response;
+      <span class="hljs-keyword">return</span> response;
     &rbrace; <span class="hljs-keyword">catch</span> (error) &lbrace;
         <span class="hljs-attribute">console</span>.error('Error fetching the HTML content:', error);
     &rbrace;

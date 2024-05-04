@@ -1,4 +1,3 @@
-// FadeInWrapper.js
 import { useEffect, useState } from 'react';
 import './FadeInWrapper.css';
 
